@@ -27,11 +27,44 @@ const info = [
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // here you could also send data to backend
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    const formData = new FormData(e.target);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        e.target.reset();
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || 'Something went wrong');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,19 +86,52 @@ const Contact = () => {
                 className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
               >
                 <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
+                
+                {error && (
+                  <div className="p-3 bg-red-500/20 border border-red-500 rounded-md text-red-300">
+                    {error}
+                  </div>
+                )}
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input type="text" placeholder="Firstname" required />
-                  <Input type="text" placeholder="Lastname" required />
-                  <Input type="email" placeholder="Email address" required />
-                  <Input type="tel" placeholder="Phone number" required />
+                  <Input 
+                    type="text" 
+                    name="firstName"
+                    placeholder="Firstname" 
+                    required 
+                  />
+                  <Input 
+                    type="text" 
+                    name="lastName"
+                    placeholder="Lastname" 
+                    required 
+                  />
+                  <Input 
+                    type="email" 
+                    name="email"
+                    placeholder="Email address" 
+                    required 
+                  />
+                  <Input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="Phone number" 
+                    required 
+                  />
                 </div>
                 <Textarea
+                  name="message"
                   className="h-[200px]"
                   placeholder="Type your message here."
                   required
                 />
-                <Button type="submit" size="md" className="max-w-40">
-                  Send message
+                <Button 
+                  type="submit" 
+                  size="md" 
+                  className="max-w-40"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Send message'}
                 </Button>
               </form>
             ) : (
