@@ -55,10 +55,32 @@ const projects = [
     title: "project 4",
     description:
       "In the context of gym membership management, it is becoming increasingly crucial to automate processes in order to optimize member tracking. This project proposes an innovative web application integrating computer vision to automatically detect the faces of members whose subscriptions have expired. By using advanced facial recognition technologies, the application enables gym managers to identify invalid members in real time. This solution aims to reduce human errors, secure access, and ensure more efficient subscription management. In addition, it improves the overall experience by providing fast and automated control. This project is part of a technological innovation approach tailored to the modern needs of gyms.",
-    stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" } , { name: "Ai integration" } , { name: "Computer vision" } , { name: "python" }],
-    image: "/assets/work/thumb4.mkv", // video file
+    stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" }, { name: "Ai integration" }, { name: "Computer vision" }, { name: "python" }],
+    image: "/assets/work/thumb4.mkv",
     live: "",
     github: "https://github.com/mr1assou/gym_management",
+  },
+  {
+    num: "05",
+    category: "Social media platform - Showcase Salon Feecra in Morocco",
+    title: "project 5",
+    description:
+      "With this project, I won first place at Feecra Expo, a creative showcase salon in Morocco. It is a social media platform that connects fresh artists and talents with restaurants and organizations. Users can showcase their skills by posting photos, videos, and performing live streams where audiences can watch and engage. The platform helps emerging performers find opportunities while enabling businesses to discover new talent for their events and services.",
+    stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
+    image: "/assets/work/thumb5.mp4",
+    live: "",
+    github: "https://github.com/mr1assou/aurax",
+  },
+  {
+    num: "05",
+    category: "Microservice project - Spring Boot",
+    title: "project 6",
+    description:
+      "At Norsys Africa, I designed and developed a dedicated microservice to manage employees’ remote work days. The system allows staff members to book and request remote days, while also ensuring that each team has a predefined default remote day to maintain consistency across departments. The service was built with scalability and flexibility in mind, enabling HR and managers to easily track and validate requests. It also provides rules to handle overlapping bookings, team-specific policies, and reporting for better workforce planning.",
+    stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
+    image: "/assets/work/thumb6.png",
+    live: "",
+    github: "https://github.com/mr1assou/Microservices-Project",
   },
 ];
 
@@ -78,7 +100,7 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-6 md:py-10 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-6 md:py-10"
     >
       <div className="container mx-auto">
         {/* COLUMN LAYOUT: Demo on top, details under */}
@@ -88,32 +110,39 @@ const Work = () => {
             <Swiper
               spaceBetween={24}
               slidesPerView={1}
-              className="h-[55vh] md:h-[65vh] lg:h-[70vh] mb-2"
+              // Taller heights and full width. Object-contain ensures full media is visible.
+              className="h-[60vh] md:h-[72vh] lg:h-[80vh] w-full mb-2"
               onSlideChange={handleSlideChange}
             >
               {projects.map((p, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="relative h-full rounded-xl overflow-hidden bg-black/30">
+                  {/* Use flex center + object-contain to avoid cropping */}
+                  <div className="relative h-full w-full bg-black/90 rounded-xl overflow-hidden flex items-center justify-center">
+                    {/* Optional subtle overlay */}
                     <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
-                    <div className="absolute inset-0">
+                    <div className="relative z-0 h-full w-full flex items-center justify-center">
                       {isVideo(p.image) ? (
                         <video
-                          className="w-full h-full object-cover"
+                          className="max-h-full max-w-full w-auto h-auto object-contain"
                           src={p.image}
                           controls
                           playsInline
+                          // remove muted/loop if you want audio by default
                           muted
                           loop
+                          preload="metadata"
                         />
                       ) : (
-                        <Image
-                          src={p.image}
-                          alt=""
-                          fill
-                          priority={index === 0}
-                          sizes="100vw"
-                          className="object-cover"
-                        />
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={p.image}
+                            alt=""
+                            fill
+                            priority={index === 0}
+                            sizes="100vw"
+                            className="object-contain"  // <- show full image
+                          />
+                        </div>
                       )}
                     </div>
                   </div>
@@ -148,18 +177,22 @@ const Work = () => {
               <div className="border border-white/15" />
 
               <div className="flex items-center gap-3 md:gap-4">
-                <Link href={project.live || "#"} target="_blank" rel="noopener noreferrer">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-xl md:text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {/* Live project button — only show if a live URL exists */}
+                {project.live ? (
+                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-xl md:text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : null}
+
 
                 <Link href={project.github} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
