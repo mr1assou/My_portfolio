@@ -74,18 +74,18 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="py-6"
+      className="py-4 md:py-6"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[30px]">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-[30px]">
           {/* form or thank you */}
-          <div className="xl:w-[54%] order-2 xl:order-none">
+          <div className="lg:w-[54%] order-2 lg:order-none">
             {!submitted ? (
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+                className="flex flex-col gap-4 md:gap-6 p-6 md:p-10 bg-[#27272c] rounded-xl"
               >
-                <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
+                <h3 className="text-2xl md:text-4xl text-accent">Let&apos;s work together</h3>
                 
                 {error && (
                   <div className="p-3 bg-red-500/20 border border-red-500 rounded-md text-red-300">
@@ -93,53 +93,53 @@ const Contact = () => {
                   </div>
                 )}
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input 
-                    type="text" 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                  <Input
+                    type="text"
                     name="firstName"
-                    placeholder="Firstname" 
-                    required 
+                    placeholder="Firstname"
+                    required
                   />
-                  <Input 
-                    type="text" 
+                  <Input
+                    type="text"
                     name="lastName"
-                    placeholder="Lastname" 
-                    required 
+                    placeholder="Lastname"
+                    required
                   />
-                  <Input 
-                    type="email" 
+                  <Input
+                    type="email"
                     name="email"
-                    placeholder="Email address" 
-                    required 
+                    placeholder="Email address"
+                    required
                   />
-                  <Input 
-                    type="tel" 
+                  <Input
+                    type="tel"
                     name="phone"
-                    placeholder="Phone number" 
-                    required 
+                    placeholder="Phone number"
+                    required
                   />
                 </div>
                 <Textarea
                   name="message"
-                  className="h-[200px]"
+                  className="h-[150px] md:h-[200px]"
                   placeholder="Type your message here."
                   required
                 />
-                <Button 
-                  type="submit" 
-                  size="md" 
-                  className="max-w-40"
+                <Button
+                  type="submit"
+                  size="md"
+                  className="max-w-32 md:max-w-40"
                   disabled={loading}
                 >
                   {loading ? 'Sending...' : 'Send message'}
                 </Button>
               </form>
             ) : (
-              <div className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl text-center">
-                <h3 className="text-3xl text-accent">
+              <div className="flex flex-col gap-4 md:gap-6 p-6 md:p-10 bg-[#27272c] rounded-xl text-center">
+                <h3 className="text-xl md:text-3xl text-accent">
                   ✅ Thank you for your message!
                 </h3>
-                <p className="text-white/70">
+                <p className="text-sm md:text-base text-white/70">
                   We will contact you soon.
                 </p>
               </div>
@@ -147,16 +147,16 @@ const Contact = () => {
           </div>
 
           {/* info */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
+          <div className="flex-1 flex items-center lg:justify-end order-1 lg:order-none mb-6 md:mb-8 lg:mb-0">
+            <ul className="flex flex-col gap-6 md:gap-8 lg:gap-10">
               {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                    <div className="text-[28px]">{item.icon}</div>
+                <li key={index} className="flex items-center gap-4 md:gap-6">
+                  <div className="w-12 h-12 md:w-[52px] md:h-[52px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <div className="text-xl md:text-[28px]">{item.icon}</div>
                   </div>
                   <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
+                    <p className="text-sm md:text-base text-white/60">{item.title}</p>
+                    <h3 className="text-base md:text-xl">{item.description}</h3>
                   </div>
                 </li>
               ))}
