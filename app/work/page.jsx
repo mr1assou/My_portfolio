@@ -163,10 +163,10 @@ const Work = () => {
                           src={p.image}
                           controls
                           playsInline
-                          // remove muted/loop if you want audio by default
+                          
                           muted
                           loop
-                          preload="metadata"
+                          preload="none"
                         />
                       ) : (
                         <div className="relative h-full w-full">
@@ -174,7 +174,7 @@ const Work = () => {
                             src={p.image}
                             alt=""
                             fill
-                            priority={index === 0}
+                            priority
                             sizes="100vw"
                             className="object-contain"  // <- show full image
                           />
