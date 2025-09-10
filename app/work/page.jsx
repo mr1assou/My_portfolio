@@ -106,6 +106,38 @@ const Work = () => {
         {/* COLUMN LAYOUT: Demo on top, details under */}
         <div className="flex flex-col gap-8">
           {/* Demo / Media slider (TOP) */}
+
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Live project button — only show if a live URL exists */}
+            {project.live ? (
+              <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                      <BsArrowUpRight className="text-white text-xl md:text-3xl group-hover:text-accent" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Live project</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+            ) : null}
+
+
+            <Link href={project.github} target="_blank" rel="noopener noreferrer">
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                    <BsGithub className="text-white text-xl md:text-3xl group-hover:text-accent" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Github repository</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </Link>
+          </div>
           <div className="w-full">
             <Swiper
               spaceBetween={24}
@@ -119,7 +151,9 @@ const Work = () => {
                   {/* Use flex center + object-contain to avoid cropping */}
                   <div className="relative h-full w-full bg-black/90 rounded-xl overflow-hidden flex items-center justify-center">
                     {/* Optional subtle overlay */}
+
                     <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
+
                     <div className="relative z-0 h-full w-full flex items-center justify-center">
                       {isVideo(p.image) ? (
                         <video
@@ -176,37 +210,6 @@ const Work = () => {
 
               <div className="border border-white/15" />
 
-              <div className="flex items-center gap-3 md:gap-4">
-                {/* Live project button — only show if a live URL exists */}
-                {project.live ? (
-                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                    <TooltipProvider delayDuration={100}>
-                      <Tooltip>
-                        <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsArrowUpRight className="text-white text-xl md:text-3xl group-hover:text-accent" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Live project</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </Link>
-                ) : null}
-
-
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-xl md:text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
