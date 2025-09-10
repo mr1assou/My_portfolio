@@ -58,7 +58,7 @@ const projects = [
     description:
       "In the context of gym membership management, it is becoming increasingly crucial to automate processes in order to optimize member tracking. This project proposes an innovative web application integrating computer vision to automatically detect the faces of members whose subscriptions have expired. By using advanced facial recognition technologies, the application enables gym managers to identify invalid members in real time. This solution aims to reduce human errors, secure access, and ensure more efficient subscription management. In addition, it improves the overall experience by providing fast and automated control. This project is part of a technological innovation approach tailored to the modern needs of gyms.",
     stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" }, { name: "Ai integration" }, { name: "Computer vision" }, { name: "python" }],
-    image: "https://ik.imagekit.io/wmchxlegw/thumb4.mkv/ik-video.mp4?updatedAt=1757529905447",
+    image: "https://ik.imagekit.io/wmchxlegw/thumb4.mp4/ik-video.mp4?updatedAt=1757544534553",
     live: "",
     github: "https://github.com/mr1assou/gym_management",
   },
