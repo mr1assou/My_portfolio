@@ -58,7 +58,7 @@ const projects = [
     description:
       "In the context of gym membership management, it is becoming increasingly crucial to automate processes in order to optimize member tracking. This project proposes an innovative web application integrating computer vision to automatically detect the faces of members whose subscriptions have expired. By using advanced facial recognition technologies, the application enables gym managers to identify invalid members in real time. This solution aims to reduce human errors, secure access, and ensure more efficient subscription management. In addition, it improves the overall experience by providing fast and automated control. This project is part of a technological innovation approach tailored to the modern needs of gyms.",
     stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" }, { name: "Ai integration" }, { name: "Computer vision" }, { name: "python" }],
-    image: "/assets/work/thumb4.mkv",
+    image: "https://ik.imagekit.io/wmchxlegw/thumb4.mkv/ik-video.mp4?updatedAt=1757529905447",
     live: "",
     github: "https://github.com/mr1assou/gym_management",
   },
@@ -86,7 +86,12 @@ const projects = [
   },
 ];
 
-const isVideo = (path) => /\.(mp4|webm|ogg|mkv)$/i.test(path);
+// robust: strip query/hash before testing the extension
+const isVideo = (path) => {
+  const clean = path.split('?')[0].split('#')[0];
+  return /\.(mp4|webm|ogg|mkv)$/i.test(clean);
+};
+
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -160,26 +165,28 @@ const Work = () => {
                       {isVideo(p.image) ? (
                         <video
                           className="max-h-full max-w-full w-auto h-auto object-contain"
-                          src={p.image}
                           controls
                           playsInline
-                          
                           muted
                           loop
-                          preload="none"
-                        />
+                          preload="metadata"
+                          poster={p.poster /* if you have one */}
+                        >
+                          <source src={p.image} type="video/mp4" />
+                        </video>
                       ) : (
                         <div className="relative h-full w-full">
                           <Image
                             src={p.image}
-                            alt=""
+                            alt={p.title || ""}
                             fill
-                            priority
+                            priority={index === 0}
                             sizes="100vw"
-                            className="object-contain"  // <- show full image
+                            className="object-contain"
                           />
                         </div>
                       )}
+
                     </div>
                   </div>
                 </SwiperSlide>
