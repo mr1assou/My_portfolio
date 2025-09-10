@@ -69,7 +69,7 @@ const projects = [
     description:
       "With this project, I won first place at Feecra Expo, a creative showcase salon in Morocco. It is a social media platform that connects fresh artists and talents with restaurants and organizations. Users can showcase their skills by posting photos, videos, and performing live streams where audiences can watch and engage. The platform helps emerging performers find opportunities while enabling businesses to discover new talent for their events and services.",
     stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
-    image: "/assets/work/thumb5.mp4",
+    image: "https://ik.imagekit.io/wmchxlegw/thumb5.mp4?updatedAt=1757534735942",
     live: "",
     github: "https://github.com/mr1assou/aurax",
   },
