@@ -58,7 +58,7 @@ const projects = [
     description:
       "In the context of gym membership management, it is becoming increasingly crucial to automate processes in order to optimize member tracking. This project proposes an innovative web application integrating computer vision to automatically detect the faces of members whose subscriptions have expired. By using advanced facial recognition technologies, the application enables gym managers to identify invalid members in real time. This solution aims to reduce human errors, secure access, and ensure more efficient subscription management. In addition, it improves the overall experience by providing fast and automated control. This project is part of a technological innovation approach tailored to the modern needs of gyms.",
     stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" }, { name: "Ai integration" }, { name: "Computer vision" }, { name: "python" }],
-    image: "https://ik.imagekit.io/wmchxlegw/thumb4.mp4/ik-video.mp4?updatedAt=1757544534553",
+    image: "/assets/work/thumb0.mp4",
     live: "",
     github: "https://github.com/mr1assou/gym_management",
   },
@@ -79,7 +79,7 @@ const projects = [
     title: "project 6",
     description:
       "At Norsys Africa, I designed and developed a dedicated microservice to manage employees’ remote work days. The system allows staff members to book and request remote days, while also ensuring that each team has a predefined default remote day to maintain consistency across departments. The service was built with scalability and flexibility in mind, enabling HR and managers to easily track and validate requests. It also provides rules to handle overlapping bookings, team-specific policies, and reporting for better workforce planning.",
-    stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
+    stack: [{ name: "Angular Js" }, { name: "Spring Boot" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Bootstrap" }],
     image: "/assets/work/thumb6.png",
     live: "",
     github: "https://github.com/mr1assou/Microservices-Project",
