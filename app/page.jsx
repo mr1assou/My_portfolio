@@ -8,17 +8,17 @@ import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
-    <section className="h-full">
+    <section className="h-full pb-12 xl:pb-12">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Enginner</span>
+            <span className="text-xl">Software Engineer</span>
             <h1 className="h1 mb-6">
               Hello I&apos;m <br /> <span className="text-accent">Marwane Assou</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I specialize in building polished, user-centric digital experiences and work confidently across a range of languages and frameworks.
+              I help businesses automate their operations, streamline workflows, and turn ideas into scalable software that delivers measurable impact.
             </p>
 
             {/* btn and socials */}

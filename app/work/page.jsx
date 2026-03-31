@@ -19,6 +19,62 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
   {
+    num: "05",
+    category: "Social media platform - Showcase Salon Feecra in Morocco",
+    title: "project 5",
+    description:
+      "With this project, I won first place at Feecra Expo, a creative showcase salon in Morocco. It is a social media platform that connects fresh artists and talents with restaurants and organizations. Users can showcase their skills by posting photos, videos, and performing live streams where audiences can watch and engage. The platform helps emerging performers find opportunities while enabling businesses to discover new talent for their events and services.",
+    stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
+    image: "/assets/work/thumb5.png",
+    live: "",
+    github: "https://github.com/mr1assou/aurax",
+  },
+  {
+    num: "03",
+    category: "frontend Project",
+    title: "project 3",
+    description:
+      "I developed a custom website for a marketing agency to highlight their services, boost online visibility, and streamline client acquisition. Built with Next.js for fast rendering, Tailwind CSS for a responsive and customizable UI, and deployed on Vercel for seamless hosting, the platform delivers a modern, user-friendly experience. It features professional branding, clear service showcases, and optimized navigation, helping the agency build trust, enhance engagement, generate leads, and strengthen its digital presence.",
+    stack: [{ name: "Next.js" }, { name: "Bootstrap" }, { name: "Git" }, { name: "Vercel" }],
+    image: "/assets/work/thumb3.png",
+    live: "https://marketing-agency-rho.vercel.app/",
+    github: "https://github.com/mr1assou/marketing-agency",
+  },
+  {
+    num: "06",
+    category: "AI Product Marketing",
+    title: "Fitly AI - Weight Loss Planner",
+    description:
+      "FitlyAI is an AI-powered web application that helps users lose weight by generating personalized plans based on their profile, goals, and habits. The platform provides smart guidance, practical recommendations, and a clear user flow to make healthy progress easier to follow. Built with Next.js full-stack development and API integration.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "OpenAI API" },
+      { name: "Full-Stack Development" },
+      { name: "API Integration" },
+    ],
+    image: "/assets/work/thumb7.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "04",
+    category: "Full Stack Project",
+    title: "Lapidaris",
+    description:
+      "Lapidaris is a memorial platform built with Next.js and Node.js that allows families and visitors to honor their loved ones online. The platform includes a virtual tribute shop where users can purchase symbolic items such as candles, flowers, and memorial gifts dedicated to the deceased. As a Full Stack Developer, I developed the Next.js frontend, the Node.js backend, and integrated Stripe for secure payments. The system enables users to browse memorial pages, select tribute items, and complete purchases easily, creating a respectful digital space for remembrance.",
+    stack: [
+      { name: "TypeScript" },
+      { name: "Node.js" },
+      { name: "Stripe API" },
+      { name: "API Development" },
+      { name: "Next.js" },
+    ],
+    image: "/assets/work/thumb4.png",
+    live: "",
+    github: "",
+  },
+  {
     num: "01",
     category: "Full Stack Project",
     title: "MWM TECH - Tech Company in US",
@@ -41,48 +97,21 @@ const projects = [
     github: "https://github.com/mr1assou/ConsultingEfficience",
   },
   {
-    num: "03",
-    category: "frontend Project",
-    title: "project 3",
-    description:
-      "I developed a custom website for a marketing agency to highlight their services, boost online visibility, and streamline client acquisition. Built with Next.js for fast rendering, Tailwind CSS for a responsive and customizable UI, and deployed on Vercel for seamless hosting, the platform delivers a modern, user-friendly experience. It features professional branding, clear service showcases, and optimized navigation, helping the agency build trust, enhance engagement, generate leads, and strengthen its digital presence.",
-    stack: [{ name: "Next.js" }, { name: "Bootstrap" }, { name: "Git" }, { name: "Vercel" }],
-    image: "/assets/work/thumb3.png",
-    live: "https://marketing-agency-rho.vercel.app/",
-    github: "https://github.com/mr1assou/marketing-agency",
-  },
-  {
-    num: "04",
-    category: "AI-powered gym management system integrated with computer vision",
-    title: "project 4",
-    description:
-      "In the context of gym membership management, it is becoming increasingly crucial to automate processes in order to optimize member tracking. This project proposes an innovative web application integrating computer vision to automatically detect the faces of members whose subscriptions have expired. By using advanced facial recognition technologies, the application enables gym managers to identify invalid members in real time. This solution aims to reduce human errors, secure access, and ensure more efficient subscription management. In addition, it improves the overall experience by providing fast and automated control. This project is part of a technological innovation approach tailored to the modern needs of gyms.",
-    stack: [{ name: "Php" }, { name: "SQL" }, { name: "JS" }, { name: "Tailwind Css" }, { name: "Ai integration" }, { name: "Computer vision" }, { name: "python" }],
-    image: "https://ik.imagekit.io/iah5xonqr/thumb0.mp4?updatedAt=1757884702563",
-    live: "",
-    github: "https://github.com/mr1assou/gym_management",
-  },
-  {
     num: "05",
-    category: "Social media platform - Showcase Salon Feecra in Morocco",
-    title: "project 5",
-    description:
-      "With this project, I won first place at Feecra Expo, a creative showcase salon in Morocco. It is a social media platform that connects fresh artists and talents with restaurants and organizations. Users can showcase their skills by posting photos, videos, and performing live streams where audiences can watch and engage. The platform helps emerging performers find opportunities while enabling businesses to discover new talent for their events and services.",
-    stack: [{ name: "React Js" }, { name: "Express Js" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Tailwind Css" }, { name: "Web Rtc" }, { name: "Ci/CD" }, { name: "Deployment in Digital Ocean" }],
-    image: "https://ik.imagekit.io/wmchxlegw/thumb5.mp4?updatedAt=1757534735942",
-    live: "",
-    github: "https://github.com/mr1assou/aurax",
-  },
-  {
-    num: "05",
-    category: "Microservice project - Spring Boot",
+    category: "Microservice Project",
     title: "project 6",
     description:
-      "At Norsys Africa, I designed and developed a dedicated microservice to manage employees’ remote work days. The system allows staff members to book and request remote days, while also ensuring that each team has a predefined default remote day to maintain consistency across departments. The service was built with scalability and flexibility in mind, enabling HR and managers to easily track and validate requests. It also provides rules to handle overlapping bookings, team-specific policies, and reporting for better workforce planning.",
-    stack: [{ name: "Angular Js" }, { name: "Spring Boot" }, { name: "SQL" }, { name: "TypeScript" }, { name: "Bootstrap" }],
+      "This Inventory Management System was built with TypeScript, React.js, and Node.js to help businesses manage stock in real time. As a Full Stack Developer, I developed a React.js + TypeScript frontend and a scalable Node.js API for product management, stock updates, and reporting. The system includes a centralized dashboard and integrates the OpenAI ChatGPT model to assist users with smart inventory queries. The application was deployed on AWS for reliable and scalable production infrastructure.",
+    stack: [
+      { name: "TypeScript" },
+      { name: "Node.js" },
+      { name: "API Integration" },
+      { name: "AWS Lambda" },
+      { name: "React" },
+    ],
     image: "/assets/work/thumb6.png",
     live: "",
-    github: "https://github.com/mr1assou/Microservices-Project",
+    github: "",
   },
 ];
 
@@ -132,18 +161,20 @@ const Work = () => {
             ) : null}
 
 
-            <Link href={project.github} target="_blank" rel="noopener noreferrer">
-              <TooltipProvider delayDuration={100}>
-                <Tooltip>
-                  <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                    <BsGithub className="text-white text-xl md:text-3xl group-hover:text-accent" />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Github repository</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </Link>
+            {project.github ? (
+              <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className="w-12 h-12 md:w-[70px] md:h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                      <BsGithub className="text-white text-xl md:text-3xl group-hover:text-accent" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Github repository</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+            ) : null}
           </div>
           <div className="w-full">
             <Swiper
@@ -182,6 +213,7 @@ const Work = () => {
                             fill
                             priority={index === 0}
                             sizes="100vw"
+                            quality={100}
                             className="object-contain"
                           />
                         </div>

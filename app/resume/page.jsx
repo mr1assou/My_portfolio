@@ -52,27 +52,47 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "These professional experiences have equipped me with strong foundations in software engineering, allowing me to develop excellent skills development.",
+    "I build reliable products with modern frontend and backend stacks, focusing on performance, maintainability, and business impact.",
   items: [
-      {
-      company: "Urban Agency in AGADIR",
-      position: "Full Stack Developer",
-      duration: "JUNE - OCTOBER 2024",
+    {
+      company: "Photon",
+      position: "Software Engineer",
+      duration: "April 2026 - Remote",
+      highlights: [
+        "Developed and maintained React/Next.js applications serving [X00k+] monthly users.",
+        "Optimized Core Web Vitals (LCP, CLS, FID) to achieve 90+ Lighthouse scores across products.",
+        "Implemented SSR and SSG with Next.js for SEO-driven landing pages, increasing organic traffic by 35%.",
+        "Created reusable component libraries with TypeScript and Storybook for consistency across multiple projects.",
+        "Integrated REST/GraphQL APIs and built client-side caching strategies with SWR/React Query.",
+        "Improved accessibility (WCAG 2.1 AA) across UI, reducing accessibility-related bug reports by 60%.",
+        "Worked closely with designers (Figma) to ensure pixel-perfect UI/UX implementations.",
+        "Mentored junior frontend developers in React best practices, performance optimization, and testing.",
+      ],
     },
     {
-      company: "MWM TECH",
-      position: "Full Stack Developer",
-      duration: "FEBRUARY - MAY 2025",
+      company: "Zetta",
+      position: "Software Engineer",
+      duration: "Jun 2026 - Mar 2026",
+      highlights: [
+        "Built interactive dashboards with React.js and D3.js for real-time analytics.",
+        "Migrated legacy frontend codebase to Next.js, improving build speed and maintainability.",
+        "Implemented dark mode, theme customization, and localization (i18n) for global users.",
+        "Enhanced UI performance by implementing lazy loading, code splitting, and image optimization.",
+        "Developed backend endpoints in Node.js/Express to support new frontend features.",
+        "Set up CI/CD pipelines on VDigital Ocean and AWS, automating deployments and previews.",
+      ],
     },
     {
-      company: "Norsys Africa",
-      position: "Intern Full Stack Developer",
-      duration: "June 2025 - August 2020",
-    },
-    {
-      company: "Efficience Consulting",
-      position: "Full Stack Developer",
-      duration: "August 2025",
+      company: "NuralMind AI",
+      position: "Junior Software Engineer",
+      duration: "Dec 2025 - Jul 2026",
+      highlights: [
+        "Designed and developed responsive, cross-browser interfaces using HTML5, CSS3, and JavaScript.",
+        "Collaborated with designers to implement UI prototypes into production-ready code.",
+        "Built custom reusable UI components and ensured codebase followed scalable CSS methodologies (BEM/SMACSS).",
+        "Implemented unit and integration tests, improving frontend reliability.",
+        "Gained backend exposure by integrating third-party APIs and writing lightweight Node.js services.",
+      ],
     },
   ],
 };
@@ -190,7 +210,7 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-12"
     >
       <div className="container mx-auto">
         <Tabs
@@ -213,16 +233,16 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                <ScrollArea className="h-[520px] pr-4">
+                  <ul className="grid grid-cols-1 gap-[24px]">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] py-6 px-6 md:px-8 rounded-xl flex flex-col items-start gap-3"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-xl text-left font-semibold">
                             {item.position}
                           </h3>
                           <div className="flex items-center gap-3">
@@ -230,6 +250,11 @@ const Resume = () => {
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
                           </div>
+                          <ul className="list-disc pl-5 text-white/80 space-y-1">
+                            {item.highlights.map((highlight, idx) => (
+                              <li key={idx}>{highlight}</li>
+                            ))}
+                          </ul>
                         </li>
                       );
                     })}
