@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 // components
 import Social from "@/components/Social";
@@ -33,16 +34,21 @@ const Home = () => {
 
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/assets/cv.pdf" download className="w-fit">
+              <Link
+                href="https://www.upwork.com/freelancers/~010e0132f5f8191689"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit"
+              >
                 <Button
                   variant="outline"
                   size="lg"
                   className="uppercase flex items-center gap-2"
                 >
                   <span>Check my portfolio</span>
-                  <FiDownload className="text-xl" />
+                  <FiArrowUpRight className="text-xl" />
                 </Button>
-              </a>
+              </Link>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
