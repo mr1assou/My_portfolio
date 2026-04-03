@@ -1,30 +1,30 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 const services = [
   {
-    "num": "01",
-    "title": "Web Development",
-    "description": "I'm a Full Stack Developer, building both the front-end and back-end of web applications.",
-    "href": ""
+    num: "01",
+    title: "Web Development",
+    description:
+      "I design and ship fast, accessible web experiences that turn visitors into customers. You get a full-stack partner for modern front ends, secure APIs, and integrations—so you launch with less risk, clearer ownership, and room to scale as your product grows.",
+    href: "",
   },
   {
-    "num": "02",
-    "title": "Mobile Development",
-    "description": "I specialize in cross-platform mobile development using React Native.",
-    "href": ""
+    num: "02",
+    title: "Mobile Development",
+    description:
+      "I build cross-platform apps with React Native so you reach iOS and Android from one codebase—cutting cost and time compared to separate native teams. You receive polished UI, solid performance, and maintainable code, which means quicker releases and a consistent brand on every device.",
+    href: "",
   },
-    {
-    "num": "03",
-    "title": "Deployment",
-    "description": "I can deploy applications to the cloud, ensuring they are scalable and reliable.",
-    "href": ""
-  }
+  {
+    num: "03",
+    title: "Deployment",
+    description:
+      "I take your app from “it works locally” to production you can trust: cloud hosting, environments, and pipelines that support safe updates. You gain reliable uptime, repeatable deploys, and infrastructure aligned with how your team actually ships—so delivery stays predictable under real traffic.",
+    href: "",
+  },
 ];
-
-import { motion } from "framer-motion";
 
 const Services = () => {
   return (
@@ -55,7 +55,9 @@ const Services = () => {
                   {service.title}
                 </h2>
                 {/* description */}
-                <p className="text-white/60">{service.description}</p>
+                <p className="text-white/60 leading-relaxed">
+                  {service.description}
+                </p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
               </div>

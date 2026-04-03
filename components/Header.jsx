@@ -19,7 +19,11 @@ const Header = () => {
         {/* desktop nav & hire me button */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
+          <Link
+            href="https://www.upwork.com/freelancers/~010e0132f5f8191689"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button>Hire me</Button>
           </Link>
         </div>

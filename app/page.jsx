@@ -13,12 +13,22 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Engineer</span>
+            <p className="text-xl text-white/90 flex flex-wrap items-center justify-center xl:justify-start gap-x-2 gap-y-1">
+              <span>Software Engineer</span>
+              <span className="text-white/40" aria-hidden>
+                ·
+              </span>
+              <span>Full Stack Developer</span>
+              <span className="text-white/40" aria-hidden>
+                ·
+              </span>
+              <span>Web Design</span>
+            </p>
             <h1 className="h1 mb-6">
               Hello I&apos;m <br /> <span className="text-accent">Marwane Assou</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I help businesses automate their operations, streamline workflows, and turn ideas into scalable software that delivers measurable impact.
+              I help businesses automate operations, streamline workflows, and ship scalable software with real impact using the latest technologies in the market, modern features, and powered by AI.
             </p>
 
             {/* btn and socials */}
@@ -29,7 +39,7 @@ const Home = () => {
                   size="lg"
                   className="uppercase flex items-center gap-2"
                 >
-                  <span>Download CV</span>
+                  <span>Check my portfolio</span>
                   <FiDownload className="text-xl" />
                 </Button>
               </a>
