@@ -1,6 +1,7 @@
 "use client";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -39,32 +40,38 @@ const MobileNav = () => {
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
-        {/* logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
-          <Link href="/">
+      <SheetContent className="flex flex-col overflow-y-auto">
+        <div className="flex flex-col items-center pt-16 pb-10 gap-8">
+          <Link href="/" className="text-center shrink-0">
             <h1 className="text-4xl font-semibold">
               Marwane<span className="text-accent">.</span>
             </h1>
           </Link>
+          <nav className="flex flex-col items-center gap-6 w-full">
+            {links.map((link, index) => {
+              return (
+                <Link
+                  href={link.path}
+                  key={index}
+                  className={`${
+                    link.path === pathname &&
+                    "text-accent border-b-2 border-accent"
+                  } text-xl capitalize hover:text-accent transition-all`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </nav>
+          <Link
+            href="https://www.upwork.com/freelancers/~010e0132f5f8191689"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 w-full max-w-[240px]"
+          >
+            <Button className="w-full">Hire me</Button>
+          </Link>
         </div>
-        {/* nav */}
-        <nav className="flex flex-col justify-center items-center gap-8">
-          {links.map((link, index) => {
-            return (
-              <Link
-                href={link.path}
-                key={index}
-                className={`${
-                  link.path === pathname &&
-                  "text-accent border-b-2 border-accent"
-                } text-xl capitalize hover:text-accent transition-all`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-        </nav>
       </SheetContent>
     </Sheet>
   );
