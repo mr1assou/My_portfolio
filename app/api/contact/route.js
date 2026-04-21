@@ -14,19 +14,29 @@ export async function POST(request) {
       );
     }
 
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    if (!smtpUser || !smtpPass) {
+      console.error('Missing SMTP_USER or SMTP_PASS environment variables');
+      return NextResponse.json(
+        { error: 'Internal server error' },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       host: "smtp.hostinger.com",
       port: 465,
       secure: true,
       auth: {
-        user: "contact@mwmofficiel.com",
-        pass: "@Marwane2003",
-      }
+        user: smtpUser,
+        pass: smtpPass,
+      },
     });
 
     // Email to you
     const teamMailOptions = {
-      from: '"Portfolio Contact" <contact@mwmofficiel.com>',
+      from: `"Portfolio Contact" <${smtpUser}>`,
       to: ['marwane.assoupf@gmail.com'],
       subject: 'New Contact Form Submission - Portfolio',
       html: `
